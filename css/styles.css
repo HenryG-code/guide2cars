@@ -1,0 +1,649 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #000; /* Black text */
+    background-color: #ffffff; /* White background */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Main Header (H1) Styling */
+#main-header {
+    font-size: 3rem; 
+    color: #062e5c; /* Darker Blue */
+    text-align: center; 
+    margin: 20px 0; /* Spacing above and below */
+    font-weight: bold; 
+    letter-spacing: 2px; /* Slight letter spacing */
+    line-height: 1.2; 
+}
+
+/* Add decorative underline */
+#main-header::after {
+    content: "";
+    display: block;
+    width: 95px; /* Underline width */
+    height: 4px; /* Underline height */
+    background-color: #ff0000; /* Red underline */
+    margin: 10px auto 0; /* Center it and space it */
+    border-radius: 3px;
+}
+
+/* Positioning Below Header */
+.main-header-section {
+    padding: 20px 0; /* Space around the header */
+    background-color: #ffffff; 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-header-section {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
+    #main-header {
+        font-size: 2rem; /* Smaller font size for mobile */
+        letter-spacing: 1px; /* Adjust spacing */
+    }
+
+    #main-header::after {
+        width: 60px; /* Smaller underline for smaller screens */
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-header {
+        font-size: 1.8rem; /* Further reduce font size for very small screens */
+    }
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #062e5ce8; /* Darker Blue */
+    color: #ffffff; /* White text */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    /*
+    border-bottom: #ff0000 5px solid;
+    */
+}
+
+.header-container{
+    margin-top: 5%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between; 
+    font-weight: bold;
+}
+
+header .logo {
+    height: 100px;
+    margin-left: 1%;
+}
+
+/* Navigation Menu */
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000; /* Red on hover */
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff0000; /* Red hover effect */
+}
+/* Mobile Dropdown Menu */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the menu icon */
+    }
+
+    .navbar {
+        display: none; /* Hide navbar initially */
+        position: absolute;
+        top: 40px; /* Just below the header */
+        right: 10px; /* Align to the right side */
+        width: auto; /* Compact width */
+        background-color: #062e5c; /* Matching header color */
+        border: 1px solid #ffffff; /* Red border for visual appeal */
+        border-radius: 5px; /* Rounded corners */
+        text-align: left;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+        z-index: 999;
+    }
+
+    .navbar.active {
+        display: block; /* Show navbar when active */
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column; /* Stack menu items vertically */
+        padding: 10px; /* Add padding inside the box */
+        margin: 0;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 8px 15px; /* Compact padding for links */
+        color: #ffffff;
+        font-size: 1rem; /* Slightly smaller text */
+        transition: color 0.3s ease, background-color 0.3s ease;
+        border-radius: 3px;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #ff0000; /* Red background on hover */
+        color: #ffffff;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    text-align: center;
+}
+
+.contact h1 {
+    color: #062e5c;
+    font-size: 2rem;
+    margin-bottom: 20px;;
+}
+/* Contact Info */
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.contact-info a {
+    color: #373737;
+    
+    text-decoration: none;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-form .name-fields {
+    display: flex;
+    gap: 10px; /* Space between first name and surname */
+    flex-wrap: wrap; /* Wrap fields on small screens */
+}
+
+.contact-form .name-fields .input-group {
+    flex: 1; /* Makes both fields equal in width */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #062e5c; /* Darker blue */
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #062e5c; /* Blue border */
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff0000; /* Red border on focus */
+}
+
+.contact-form textarea {
+    resize: none; /* Prevent resizing */
+}
+
+.contact-form button {
+    background-color: #062e5c;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ff0000; /* Red hover effect */
+}
+
+/* Social Media Section Below Header */
+.social-media-section {
+    background-color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.social-media-section .social-icons a {
+    color: #002855; /* Darker blue */
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+    float: inline-end; /* float right */
+    margin-right: 1%;
+}
+
+.social-media-section .social-icons a:hover {
+    color: #ff0000; /* Red on hover */
+}
+
+/* Services Section */
+.services {
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 50px 0; /* Top and bottom spacing */
+    text-align: center;
+}
+
+.services h2 {
+    color: #062e5ce8; /* Darker blue heading */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Service Cards Container */
+.service-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers cards */
+    gap: 30px; /* Spacing between cards */
+    padding: 0 10px; /* Adds padding to the sides */
+}
+
+/* Individual Service Card */
+.service-card {
+    flex: 1 1 calc(33.333% - 40px); /* Ensures 3 cards per row with gaps */
+    max-width: 350px; /* Limits the card width */
+    background-color: #ffffff; /* White background */
+    border: 2px solid #062e5ce8; /* Dark blue border */
+    border-radius: 10px; 
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card h3 {
+    color: #062e5ce8; /* Darker blue text */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #333; /* Dark grey for readability */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+
+/* Video Section */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    overflow: hidden; /* Prevents any overflow on smaller screens */
+}
+
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stretch the video without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-section h1 {
+    position: absolute;
+    top: 20%; /* Moves the heading up to avoid overlap */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background: rgba(0, 40, 85, 0.8); /* Semi-transparent darker blue */
+    padding: 10px 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-section {
+        height: 60vh; /* Reduce height for tablets and small screens */
+    }
+
+    .video-section video {
+        height: 100%;
+        object-fit: contain; /* Fit video within smaller container without cropping */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section {
+        height: 50vh; /* Smaller height for mobile screens */
+    }
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 30px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.gallery h2 {
+    color: #062e5ce8; /* Matching dark blue */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Grid for Images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between images */
+    padding: 0 10px;
+}
+
+.image-grid img {
+    width: 100%; /* Stretch to container width */
+    height: 200px; /* Fixed height for uniform size */
+    object-fit: cover; /* Crop and scale images proportionally */
+    border: 1px solid #062e5ce8; /* Dark blue border */
+    border-radius: 5px; /* Smooth edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.image-grid img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* History Section */
+.history {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.history h2 {
+    color: #062e5c; /* Darker Blue */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Container for the quotes */
+.quote-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between boxes */
+    justify-content: center; /* Center align the boxes */
+}
+
+/* History Section */
+.history {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Heading */
+.history h2 {
+    color: #062e5c; /* Darker Blue */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Introductory Section with Image */
+.history-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between image and text */
+    margin-bottom: 40px;
+}
+
+.history-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit:cover;
+    object-position: top center; /* Repositions the visible area */
+    border: 1px  #000000; /* Dark blue border */
+}
+
+.history-intro p {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Quotes Section */
+.quote-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Spacing between quote boxes */
+    margin-bottom: 40px;
+}
+
+.quote-box {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for border effect */
+    padding: 20px;
+    width: calc(33.333% - 30px); /* Three boxes per row */
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.quote-box p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Closing Paragraph */
+.history-closing {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.history-closing p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .quote-box {
+        width: calc(50% - 20px); /* Two boxes per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .history-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quote-box {
+        width: 100%; /* One box per row */
+    }
+}
+
+/* Map Section */
+.map-section iframe {
+    display: block;
+    width: 100%; /* Full width of the screen */
+    height: 400px;
+    margin-top: 30px;
+    border: none;
+}
+
+
+/* Footer */
+footer {
+    background-color: #01336bea; /* Darker Blue */
+    color: #ffffff; /* White text */
+    padding: 30px 10%; /* Adjust padding */
+    text-align: center; /* Center all content */
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items horizontally centered */
+    gap: 15px; /* Space between items */
+}
+
+.footer-logo-link {
+    display: inline-block;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease; /* Logo hover effect */
+}
+
+.footer-logo:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between social icons */
+}
+
+.footer-icons a {
+    color: #ffffff;
+    font-size: 1.8rem; /* Increase icon size */
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #ff0000; /* Red on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer .container {
+        padding: 10px;
+    }
+
+    .footer-icons a {
+        font-size: 1.5rem;
+    }
+}
+
+
