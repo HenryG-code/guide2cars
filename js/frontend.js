@@ -1,16 +1,26 @@
 // Function to toggle the mobile navbar
-function toggleNavbar(menuToggleId, navbarId) {
-    const menuToggle = document.getElementById(menuToggleId);
-    const navbar = document.getElementById(navbarId);
+function toggleNavbar(menuToggleSelector, navbarSelector) {
+    const menuToggle = document.querySelector(menuToggleSelector);
+    const navbar = document.querySelector(navbarSelector);
 
-    menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-    });
+    if (menuToggle && navbar) { // Safety check
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    }
 }
 
 // Initialize the function after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
-    toggleNavbar('menu-toggle', 'navbar');
+    // Safety check for home page elements
+    if (document.querySelector('#menu-toggle-home') && document.querySelector('#navbar-home')) {
+        toggleNavbar('#menu-toggle-home', '#navbar-home'); // Home Page
+    }
+
+    // Safety check for contact page elements
+    if (document.querySelector('#menu-toggle-contact') && document.querySelector('#navbar-contact')) {
+        toggleNavbar('#menu-toggle-contact', '#navbar-contact'); // Contact Page
+    }
 });
 
 // Function to handle mobile service card scrolling

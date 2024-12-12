@@ -111,6 +111,7 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Show the menu icon */
@@ -132,6 +133,7 @@ header nav ul li a:hover {
 
     .navbar.active {
         display: block; /* Show navbar when active */
+        position: absolute;
     }
 
     .navbar ul {
