@@ -23,63 +23,13 @@ a {
     max-width: 1200px;
 }
 
-/* Main Header (H1) Styling */
-#main-header {
-    font-size: 3rem; 
-    color: #062e5c; /* Darker Blue */
-    text-align: center; 
-    margin: 20px 0; /* Spacing above and below */
-    font-weight: bold; 
-    letter-spacing: 2px; /* Slight letter spacing */
-    line-height: 1.2; 
-}
-
-/* Add decorative underline */
-#main-header::after {
-    content: "";
-    display: block;
-    width: 95px; /* Underline width */
-    height: 4px; /* Underline height */
-    background-color: #ff0000; /* Red underline */
-    margin: 10px auto 0; /* Center it and space it */
-    border-radius: 3px;
-}
-
-/* Positioning Below Header */
-.main-header-section {
-    padding: 20px 0; /* Space around the header */
-    background-color: #ffffff; 
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .main-header-section {
-        padding: 20px 10px; /* Reduce padding on smaller screens */
-    }
-
-    #main-header {
-        font-size: 2rem; /* Smaller font size for mobile */
-        letter-spacing: 1px; /* Adjust spacing */
-    }
-
-    #main-header::after {
-        width: 60px; /* Smaller underline for smaller screens */
-        height: 3px;
-    }
-}
-
-@media (max-width: 480px) {
-    #main-header {
-        font-size: 1.8rem; /* Further reduce font size for very small screens */
-    }
-}
-
 /* Header */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #062e5ce8; /* Darker Blue */
+    background-color: #0D446B; 
+    opacity: 95%;
     color: #ffffff; /* White text */
     padding: 10px 20px;
     display: flex;
@@ -820,7 +770,7 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #01336bea; /* Darker Blue */
+    background-color: #0D446B; /* Darker Blue */
     color: #ffffff; /* White text */
     padding: 30px 10%; /* Adjust padding */
     text-align: center; /* Center all content */
