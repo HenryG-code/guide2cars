@@ -19,22 +19,31 @@
         <div class="container">
             <img src="pictures/logo.jpg" alt="Guide2Cars Logo" class="logo">
         </div>
+
+        <h1 class="header-title">guide2cars</h1>
+
         <div class="header-container">
-            <nav>
+             <!-- Hamburger Menu Icon for Mobile -->
+             <button class="menu-toggle" id="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
+             <!-- Navigation Menu -->
+            <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#section2">Services</a></li>
+                    <li><a href="#section3">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-  <!-- Main Header Section -->
+<!--
+  
 <section class="main-header-section">
     <h1 id="main-header">guide2cars.co.za</h1>
 </section>
-
+-->
     <!-- Social Media Section -->
 <section class="social-media-section">
     <div class="social-icons">
@@ -54,57 +63,63 @@
     </section>
 
     <!-- Services Section -->
+  <!-- Services Section -->
     <section class="services" id="section2">
         <div class="container">
-            <h2 >Our Services</h2>
-            <div class="service-cards">
+            <h2>Our Services</h2>
+            <button class="nav-arrow arrow-left" id="arrow-left">&lt;</button>
+            <div class="service-cards" id="service-cards">
                 <div class="service-card">
-                    <h3>Guide you to sell your car</h3>
-                    <p>We assist you in evaluating and getting the best value when selling your vehicle.</p>
+                    <h3>Guide You to Sell Your Car</h3>
+                    <p>We guide you step by step to sell your car efficiently. From evaluating its worth to connecting with verified buyers, we ensure you get the best value for your vehicle while saving time.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Guide you to buy your new car</h3>
-                    <p>Expert advice on choosing the right vehicle for your needs and budget.</p>
+                    <h3>Guide You to Buy Your New Car</h3>
+                    <p>Finding the perfect car can be challenging. We provide personalized advice based on your needs, budget, and preferences, ensuring you drive away with your dream car hassle-free.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Expert valuations and viewings</h3>
-                    <p>Professional evaluations and personalized viewing assistance for used vehicles.</p>
+                    <h3>Expert Valuations and Viewings</h3>
+                    <p>Get professional car valuations backed by years of experience. We also arrange personalized vehicle viewings to help you make informed decisions before making any purchase or sale.</p>
                 </div>
             </div>
+            <button class="nav-arrow arrow-right" id="arrow-right">&gt;</button>
         </div>
     </section>
 
-     <!-- Gallery Section -->
-     <section class="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="image-grid">
-                <img src="pictures/audi.jpg" alt="Gallery Image 1">
-                <img src="pictures/car.jpg" alt="Gallery Image 2">
-                <img src="pictures/merc2.jpg" alt="Gallery Image 3">
-                <img src="pictures/merc.jpg" alt="Gallery Image 4">
-                <img src="pictures/ferrari.jpg" alt="Gallery Image 5">
-                <img src="pictures/bmw2.jpg" alt="Gallery Image 6">
-                <img src="pictures/old.jpg" alt="Gallery Image 7">
-                <img src="pictures/old2.jpg" alt="Gallery Image 8">
-                <img src="pictures/old3.jpg" alt="Gallery Image 9">
-                <img src="pictures/mercJeep.jpg" alt="Gallery Image 10">
-                <img src="pictures/suv.jpg" alt="Gallery Image 11">
-                <img src="pictures/jeep.jpg" alt="Gallery Image 12">
-            </div>
+    <!-- Gallery Section -->
+<section class="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <!-- Scrollable Images -->
+        <button class="gallery-button button-left">&lt;</button>
+        <div class="image-grid">
+            <img src="pictures/audi.jpg" alt="Gallery Image 1">
+            <img src="pictures/car.jpg" alt="Gallery Image 2">
+            <img src="pictures/merc2.jpg" alt="Gallery Image 3">
+            <img src="pictures/merc.jpg" alt="Gallery Image 4">
+            <img src="pictures/ferrari.jpg" alt="Gallery Image 5">
+            <img src="pictures/bmw2.jpg" alt="Gallery Image 6">
+            <img src="pictures/old.jpg" alt="Gallery Image 7">
+            <img src="pictures/old2.jpg" alt="Gallery Image 8">
+            <img src="pictures/old3.jpg" alt="Gallery Image 9">
+            <img src="pictures/mercJeep.jpg" alt="Gallery Image 10">
+            <img src="pictures/suv.jpg" alt="Gallery Image 11">
+            <img src="pictures/jeep.jpg" alt="Gallery Image 12">
         </div>
-    </section>
+        <button class="gallery-button button-right">&gt;</button>
+    </div>
+</section>
 
     <!-- History Section -->
 <section class="history">
     <div class="container">
-        <h2>Our History</h2>
+        <h2 id="section3">About Us</h2>
         
         <!-- Introductory Sentence with Image -->
         <div class="history-intro">
             <img src="pictures/placeholder.jpg" alt="Founder Image" class="history-image">
             <p>
-                Founder of guide2cars.co.za is Francois Ferreira and he has more than 20 years motor industry related experience.
+                Founder of guide2cars Francois Ferreira has more than 20 years motor industry related experience.
             </p>
         </div>
 
@@ -147,7 +162,7 @@
     <div class="container">
         <!-- Logo as a link -->
         <a href="index.html" class="footer-logo-link">
-            <img src="/pictures/logo.jpg" alt="Guide2Cars Logo" class="footer-logo">
+            <img src="/pictures/logo2.jpg" alt="Guide2Cars Logo" class="footer-logo">
         </a>
         <!-- Social Media Icons -->
         <div class="footer-icons">
@@ -160,7 +175,7 @@
     </div>
 </footer>
     
-<!-- Link to External Script -->
-<script src="js/navbar.js"></script>
+ <!-- Link to External Script -->
+ <script src="js/frontend.js"></script>
 </body>
 </html>
