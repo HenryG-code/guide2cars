@@ -156,6 +156,7 @@ header nav ul li a:hover {
         font-size: 1.8rem;
         left: 50%;
         transform: translateX(-50%);
+        margin-left:70%;
     }
 
     .slogan-container {
@@ -217,11 +218,12 @@ header nav ul li a:hover {
 /* Very Small Screens: 480px */
 @media (max-width: 480px) {
     .header-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin-left:70%;
     }
 
     #slogan {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 
     header .logo {
