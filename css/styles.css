@@ -31,7 +31,7 @@ header {
     background-color: #0D446B; 
     opacity: 95%;
     color: #ffffff; /* White text */
-    padding: 10px 20px;
+    padding: 0px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,19 +57,35 @@ header .logo {
 
 /* Centered Header Title */
 .header-title {
-    color: #ffffff; /* White text */
-    font-size: 2.5rem; /* Large font size */
-    font-family:"Mulish", sans-serif;
-    font-optical-sizing: auto;
-    font-weight:bold;
-    font-style: normal;
+    font-size: 3rem;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
     letter-spacing: 1px;
-    text-align: center;
-    flex-grow: 1; /* Center-align by taking available space */
     margin: 0;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+/* Slogan Container */
+.slogan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center;
     position: absolute;
+    top: 50%; /* Center vertically */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    text-align: center; /* Center-align text */
+}
+
+/* Slogan */
+#slogan {
+    font-size: 0.7rem;
+    margin-top: 5px; /* Space between title and slogan */
+    color: #ffffff;
+    white-space: nowrap; /* Allow wrapping */
+    margin-left: 60%;
 }
 
 /* Navigation Menu */
@@ -115,35 +131,70 @@ header nav ul li a:hover {
 }
 
 
+/* Media Queries */
+
+/* Medium Screens: 1024px */
+@media (max-width: 1024px) {
+    .header-title {
+        font-size: 2.5rem; /* Adjusted size */
+    }
+}
+
+/* Smaller Screens: 768px */
 @media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    header .logo {
+        height: 50px;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .slogan-container {
+        margin: 0;
+    }
+
+    #slogan {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+
     .menu-toggle {
-        display: block; /* Show the menu icon */
+        display: block; /* Show hamburger menu */
+        position: relative;
+        z-index: 1001;
     }
 
     .navbar {
         display: none; /* Hide navbar initially */
         position: absolute;
-        top: 40px; /* Just below the header */
-        right: 10px; /* Align to the right side */
-        width: auto; /* Compact width */
-        background-color: #062e5c; /* Matching header color */
-        border: 1px solid #ffffff; /* Red border for visual appeal */
-        border-radius: 5px; /* Rounded corners */
-        text-align: left;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
-        z-index: 999;
+        top: 100%; /* Below header */
+        right: 10px;
+        background-color: #062e5c;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
     }
 
     .navbar.active {
-        display: block; /* Show navbar when active */
-        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .navbar ul {
-        display: flex;
-        flex-direction: column; /* Stack menu items vertically */
-        padding: 10px; /* Add padding inside the box */
+        flex-direction: column;
         margin: 0;
+        padding: 0;
     }
 
     .navbar ul li {
@@ -151,84 +202,48 @@ header nav ul li a:hover {
     }
 
     .navbar ul li a {
-        display: block;
-        padding: 8px 15px; /* Compact padding for links */
+        padding: 8px 15px;
         color: #ffffff;
-        font-size: 1rem; /* Slightly smaller text */
+        font-size: 1rem;
         transition: color 0.3s ease, background-color 0.3s ease;
         border-radius: 3px;
     }
 
     .navbar ul li a:hover {
-        background-color: #ff0000; /* Red background on hover */
-        color: #ffffff;
+        background-color: #ff0000;
     }
 }
 
-
-
-@media (max-width: 1024px) {
-    .header-container {
-        flex-direction: row;
-    }
-
+/* Very Small Screens: 480px */
+@media (max-width: 480px) {
     .header-title {
-        font-size: 2rem; /* Adjust title size on mobile */
-        position: static;
-        text-align: center;
-        flex-grow: 1; /* Center-align by taking available space */
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-
-    }
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: row;
+        font-size: 1.2rem;
     }
 
-    .header-title {
-        font-size: 1.8rem; /* Adjust title size on mobile */
-        position: static;
-        text-align: center;
-        flex-grow: 1; /* Center-align by taking available space */
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+    #slogan {
+        font-size: 0.6rem;
+    }
 
+    header .logo {
+        height: 30px;
     }
 
     .menu-toggle {
-        display: block;
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra Small Screens: 414px */
+@media (max-width: 414px) {
+    .header-title {
+        font-size: 1.2rem;
     }
 
-    @media (max-width: 414px) {
-        .header-container {
-            flex-direction: row;
-        }
-    
-        .header-title {
-            font-size: 1.1rem; /* Adjust title size on mobile */
-            position: static;
-            text-align: center;
-            flex-grow: 1; /* Center-align by taking available space */
-            margin: 0;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-    
-        }
-    
-        .menu-toggle {
-            display: block;
-        }
+    #slogan {
+        font-size: 0.5rem;
+    }
+}
 
-}
-}
 
 /* Contact Section */
 .contact {
