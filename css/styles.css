@@ -149,7 +149,7 @@ header nav ul li a:hover {
     }
 
     header .logo {
-        height: 50px;
+        height: 70px;
     }
 
     .header-title {
@@ -218,9 +218,14 @@ header nav ul li a:hover {
 /* Very Small Screens: 480px */
 @media (max-width: 480px) {
     .header-title {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-left:70%;
     }
+
+    header .logo {
+        height: 60px;
+    }
+
 
     #slogan {
         font-size: 0.5rem;
