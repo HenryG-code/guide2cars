@@ -179,7 +179,7 @@ header nav ul li a:hover {
         position: absolute;
         top: 100%; /* Below header */
         right: 10px;
-        background-color: #062e5c;
+        background-color: #0D446B;
         border-radius: 5px;
         padding: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -255,7 +255,7 @@ header nav ul li a:hover {
 }
 
 .contact h1 {
-    color: #062e5c;
+    color: #0D446B;
     font-size: 2rem;
     margin-bottom: 20px;;
 }
@@ -299,7 +299,7 @@ header nav ul li a:hover {
 
 .contact-form label {
     font-weight: bold;
-    color: #062e5c; /* Darker blue */
+    color: #0D446B; /* Darker blue */
     margin-bottom: 5px;
     text-align: left;
 }
@@ -307,7 +307,7 @@ header nav ul li a:hover {
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid #062e5c; /* Blue border */
+    border: 1px solid #0D446B; /* Blue border */
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
@@ -324,7 +324,7 @@ header nav ul li a:hover {
 }
 
 .contact-form button {
-    background-color: #062e5c;
+    background-color: #0D446B;
     color: #ffffff;
     border: none;
     padding: 10px;
@@ -347,7 +347,7 @@ header nav ul li a:hover {
 }
 
 .social-media-section .social-icons a {
-    color: #002855; /* Darker blue */
+    color: #0D446B; /* Darker blue */
     font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s;
@@ -369,7 +369,7 @@ header nav ul li a:hover {
 }
 
 .services h2 {
-    color: #062e5ce8; /* Darker blue heading */
+    color: #0D446B; /* Darker blue heading */
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
@@ -396,7 +396,7 @@ header nav ul li a:hover {
     max-width: 350px;
     margin-left: 2%;
     background-color: #f0f8ff;
-    border: 2px solid #062e5c;
+    border: 2px solid #0D446B;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -405,7 +405,7 @@ header nav ul li a:hover {
 }
 
 .service-card h3 {
-    color: #062e5ce8; /* Darker blue text */
+    color: #0D446B; /* Darker blue text */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -422,7 +422,7 @@ header nav ul li a:hover {
     position: absolute;
     top: 50%; 
     transform: translateY(-50%);
-    background-color: #062e5c;
+    background-color: #0D446B;
     color: #ffffff;
     border: none;
     border-radius: 50%;
@@ -560,7 +560,7 @@ header nav ul li a:hover {
 }
 
 .gallery h2 {
-    color: #062e5ce8; 
+    color: #0D446B; 
     margin-bottom: 20px;
     font-size: 2rem;
 }
@@ -661,7 +661,7 @@ header nav ul li a:hover {
 }
 
 .history h2 {
-    color: #062e5c; /* Darker Blue */
+    color: #0D446B; /* Darker Blue */
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: bold;
@@ -684,7 +684,7 @@ header nav ul li a:hover {
 
 /* Heading */
 .history h2 {
-    color: #062e5c; /* Darker Blue */
+    color: #0D446B; /* Darker Blue */
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: bold;
