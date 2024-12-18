@@ -47,11 +47,13 @@
             <h1>Contact Us</h1>
             <p class="contact-info">
                 <strong>Phone:</strong> 073 232 524 <br>
-                <strong>Email:</strong> <a href="mailto:francois@guide2cars.co.za">francois@guide2cars.co.za </a> <br>
-                <strong>Location:</strong> Somerset West, Cape Town <br>
+                <strong>Email:</strong> <a href="mailto:francois@guide2cars.co.za">francois@guide2cars.co.za</a> <br>
+                <strong>Location:</strong> Somerset West, Cape Town
             </p>
 
+            <!-- Contact Form -->
             <form action="submit_form.php" method="POST" class="contact-form">
+                <!-- Name Fields -->
                 <div class="name-fields">
                     <div class="input-group">
                         <label for="firstname">First Name:</label>
@@ -62,14 +64,21 @@
                         <input type="text" id="surname" name="surname" placeholder="Your Surname" required>
                     </div>
                 </div>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us your story..." required></textarea>
-            
-                <button type="submit">Send Message</button>
+
+                <!-- Email Field -->
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="input-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us your story..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
