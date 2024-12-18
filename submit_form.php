@@ -6,10 +6,14 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-session_start(); // Start session for success/error messages
+session_start();
 
+// Initialize message variable
+$message_status = "";
+
+// Process the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve and sanitize form inputs
+    // Retrieve and sanitize inputs
     $firstname = htmlspecialchars(trim($_POST['firstname']));
     $surname = htmlspecialchars(trim($_POST['surname']));
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
@@ -17,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate email address
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['message_status'] = "<p style='color: red;'>Invalid email address. Please enter a valid email.</p>";
+        $message_status = "<p style='color: red;'>Invalid email address. Please enter a valid email.</p>";
     } else {
         try {
             // Initialize PHPMailer
@@ -36,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->addReplyTo($email, "$firstname $surname");
 
             $mail->Subject = "New Contact Form Submission from $firstname $surname";
-            $mail->Body = "You have received a new message from the contact form:\n\n" .
+            $mail->Body = "You have received a new message:\n\n" .
                           "First Name: $firstname\n" .
                           "Surname: $surname\n" .
                           "Email: $email\n\n" .
@@ -44,14 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Send the email
             $mail->send();
-            $_SESSION['message_status'] = "<p style='color: green;'>Thank you, $firstname! Your message has been sent successfully.</p>";
+            $message_status = "<p style='color: green;'>Thank you, $firstname! Your message has been sent successfully.</p>";
         } catch (Exception $e) {
-            $_SESSION['message_status'] = "<p style='color: red;'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</p>";
+            $message_status = "<p style='color: red;'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</p>";
         }
     }
-
-    header("Location: contact.html"); // Redirect back to the contact page
-    exit;
 }
 ?>
 
