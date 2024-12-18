@@ -130,13 +130,17 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
-
 /* Media Queries */
 
 /* Medium Screens: 1024px */
 @media (max-width: 1024px) {
     .header-title {
         font-size: 2.5rem; /* Adjusted size */
+    }
+
+    #slogan {
+        font-size: 0.6rem;
+        margin-top: 5px;
     }
 }
 
@@ -164,7 +168,7 @@ header nav ul li a:hover {
     }
 
     #slogan {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         margin-top: 5px;
     }
 
