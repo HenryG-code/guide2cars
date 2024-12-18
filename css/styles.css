@@ -116,7 +116,7 @@ header nav ul li a:hover {
 }
 
 .navbar ul li a:hover {
-    color: #ff0000; 
+    color: #cf4e4e; 
 }
 
 /* Mobile Dropdown Menu */
@@ -214,7 +214,7 @@ header nav ul li a:hover {
     }
 
     .navbar ul li a:hover {
-        background-color: #ff0000;
+        background-color: #4571a3;
     }
 }
 
