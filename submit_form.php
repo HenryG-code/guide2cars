@@ -1,5 +1,12 @@
 <?php
-session_start(); // Start a session to store success/error messages
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+session_start(); // Start session for success/error messages
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize form inputs
@@ -8,33 +15,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars(trim($_POST['message']));
 
-    // Email recipient
-    $to = "francois@guide2cars.co.za";
-    $subject = "New Contact Form Submission from $firstname $surname";
-
-    // Email body
-    $body = "You have received a new message from the contact form:\n\n";
-    $body .= "First Name: $firstname\n";
-    $body .= "Surname: $surname\n";
-    $body .= "Email: $email\n\n";
-    $body .= "Message:\n$message\n";
-
-    // Email headers
-    $headers = "From: noreply@guide2cars.co.za\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    // Check email validity
+    // Validate email address
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['message_status'] = "<p style='color: red;'>Invalid email address. Please enter a valid email.</p>";
     } else {
-        // Attempt to send the email
-        if (mail($to, $subject, $body, $headers)) {
+        try {
+            // Initialize PHPMailer
+            $mail = new PHPMailer(true);
+            $mail->isSMTP();
+            $mail->Host = 'smtp.xneelo.co.za'; // Xneelo SMTP server
+            $mail->SMTPAuth = true;
+            $mail->Username = 'francois@guide2cars.co.za'; // Your full email address
+            $mail->Password = 'YOUR_PASSWORD_HERE';       // Your email account password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use TLS encryption
+            $mail->Port = 587; // Port for TLS
+
+            // Email settings
+            $mail->setFrom('francois@guide2cars.co.za', 'Guide2Cars');
+            $mail->addAddress('francois@guide2cars.co.za'); // Recipient email
+            $mail->addReplyTo($email, "$firstname $surname");
+
+            $mail->Subject = "New Contact Form Submission from $firstname $surname";
+            $mail->Body = "You have received a new message from the contact form:\n\n" .
+                          "First Name: $firstname\n" .
+                          "Surname: $surname\n" .
+                          "Email: $email\n\n" .
+                          "Message:\n$message";
+
+            // Send the email
+            $mail->send();
             $_SESSION['message_status'] = "<p style='color: green;'>Thank you, $firstname! Your message has been sent successfully.</p>";
-        } else {
-            $_SESSION['message_status'] = "<p style='color: red;'>Sorry, there was an error sending your message. Please try again later.</p>";
+        } catch (Exception $e) {
+            $_SESSION['message_status'] = "<p style='color: red;'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</p>";
         }
     }
+
     header("Location: contact.html"); // Redirect back to the contact page
     exit;
 }
 ?>
+
