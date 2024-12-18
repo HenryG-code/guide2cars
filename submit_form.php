@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Username = 'francois@guide2cars.co.za'; // Your full email address
             $mail->Password = '';       // Your email account password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use TLS encryption
-            $mail->Port = 587; // Port for TLS
+            $mail->Port = 465; // Port for TLS or 587
 
             // Email settings
             $mail->setFrom('francois@guide2cars.co.za', 'Guide2Cars');
