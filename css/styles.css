@@ -85,7 +85,7 @@ header .logo {
     margin-top: 5px; /* Space between title and slogan */
     color: #ffffff;
     white-space: nowrap; /* Allow wrapping */
-    margin-left: 60%;
+   
 }
 
 /* Navigation Menu */
@@ -117,7 +117,7 @@ header nav ul li a:hover {
 }
 
 .navbar ul li a:hover {
-    color: #ff0000; /* Red hover effect */
+    color: #ff0000; 
 }
 
 /* Mobile Dropdown Menu */

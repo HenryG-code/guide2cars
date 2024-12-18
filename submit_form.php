@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -30,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host = 'smtp.xneelo.co.za'; // Xneelo SMTP server
             $mail->SMTPAuth = true;
             $mail->Username = 'francois@guide2cars.co.za'; // Your full email address
-            $mail->Password = 'Francois@751218!';       // Your email account password
+            $mail->Password = '';       // Your email account password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use TLS encryption
             $mail->Port = 587; // Port for TLS
 
