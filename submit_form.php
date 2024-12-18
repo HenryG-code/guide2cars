@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host = 'smtp.xneelo.co.za'; // Xneelo SMTP server
             $mail->SMTPAuth = true;
             $mail->Username = 'francois@guide2cars.co.za'; // Your full email address
-            $mail->Password = 'YOUR_PASSWORD_HERE';       // Your email account password
+            $mail->Password = 'Francois@751218!';       // Your email account password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use TLS encryption
             $mail->Port = 587; // Port for TLS
 
