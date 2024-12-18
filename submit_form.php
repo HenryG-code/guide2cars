@@ -38,17 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
 }
 ?>
-
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-session_start(); // Start session for success/error messages
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Form submitted!"; // Debug to see if the POST request is received
-} else {
-    echo "Invalid request method.";
-}
-?>
-
