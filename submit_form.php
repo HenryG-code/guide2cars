@@ -14,7 +14,7 @@ try {
     $mail->Host = 'smtp.guide2cars.co.za'; // Correct SMTP server
     $mail->SMTPAuth = true; // Enable authentication
     $mail->Username = 'francois@guide2cars.co.za'; // Your full email address
-    $mail->Password = ''; // Your email password
+    $mail->Password = 'Francois@751218!'; // Your email password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SSL
     $mail->Port = 465; // SMTP port for SSL
 

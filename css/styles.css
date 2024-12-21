@@ -51,13 +51,13 @@ header {
 
 /* Logo */
 header .logo {
-    height: 80px;
+    height: 95px;
     margin-left: 1%;
 }
 
 /* Centered Header Title */
 .header-title {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-family: "Mulish", sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
@@ -81,7 +81,7 @@ header .logo {
 
 /* Slogan */
 #slogan {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 5px; /* Space between title and slogan */
     color: #ffffff;
     white-space: nowrap; /* Allow wrapping */
@@ -100,7 +100,7 @@ header nav ul li {
 
 header nav ul li a {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
@@ -130,7 +130,6 @@ header nav ul li a:hover {
 }
 
 /* Media Queries */
-
 /* Medium Screens: 1024px */
 @media (max-width: 1024px) {
     .header-title {
@@ -138,7 +137,7 @@ header nav ul li a:hover {
     }
 
     #slogan {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         margin-top: 5px;
     }
 }
@@ -156,8 +155,8 @@ header nav ul li a:hover {
     }
 
     .header-title {
-        font-size: 1.8rem;
-        left: 50%;
+        font-size: 2.5rem;
+        left: 60%;
         transform: translateX(-50%);
         margin-left:70%;
     }
@@ -167,7 +166,7 @@ header nav ul li a:hover {
     }
 
     #slogan {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         margin-top: 5px;
     }
 
@@ -180,19 +179,24 @@ header nav ul li a:hover {
     .navbar {
         display: none; /* Hide navbar initially */
         position: absolute;
-        top: 100%; /* Below header */
+        top: 100%; 
         right: 10px;
         background-color: #0D446B;
         border-radius: 5px;
         padding: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+        transform: scale(0.95);
+        opacity: 0;
     }
 
     .navbar.active {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        transform: scale(1);
+        opacity: 1;
     }
 
     .navbar ul {
@@ -221,7 +225,7 @@ header nav ul li a:hover {
 /* Very Small Screens: 480px */
 @media (max-width: 480px) {
     .header-title {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin-left:70%;
     }
 
@@ -231,7 +235,7 @@ header nav ul li a:hover {
 
 
     #slogan {
-        font-size: 0.5rem;
+        font-size: 0.9rem;
     }
 
     header .logo {
@@ -413,18 +417,22 @@ header nav ul li a:hover {
         text-align: center;
         text-decoration: none;
         border-radius: 50%;
-      }
-
-   
+      } 
 }
+
+    #section2{
+        color: white;
+    }
 
 /* Services Section */
 .services {
     background-color: #fcfcfc; /* Light blue background */
-    padding: 50px 0; /* Top and bottom spacing */
+    padding: 30px 0; /* Top and bottom spacing */
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-bottom: 50px;
+    margin-top: 10px;
 }
 
 .services h2 {
@@ -555,6 +563,11 @@ header nav ul li a:hover {
 @media (max-width: 480px) {
     .service-card {
         flex: 0 0 80%; /* Slightly smaller for very small screens */
+    }
+
+    #section2{
+        color: white;
+        font-size: xx-small;
     }
 }
 
@@ -870,7 +883,7 @@ footer .container {
 }
 
 .footer-logo {
-    height: 50px;
+    height: 95px;
     width: auto;
     transition: transform 0.3s ease; /* Logo hover effect */
 }
@@ -909,6 +922,12 @@ footer p {
 
     .footer-icons a {
         font-size: 1.5rem;
+    }
+
+    .footer-logo {
+        height: 55px;
+        width: auto;
+        transition: transform 0.3s ease; /* Logo hover effect */
     }
 }
 

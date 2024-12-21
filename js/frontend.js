@@ -3,9 +3,17 @@ function toggleNavbar(menuToggleSelector, navbarSelector) {
     const menuToggle = document.querySelector(menuToggleSelector);
     const navbar = document.querySelector(navbarSelector);
 
-    if (menuToggle && navbar) { // Safety check
+    if (menuToggle && navbar) { 
         menuToggle.addEventListener('click', () => {
             navbar.classList.toggle('active');
+        });
+
+        // Close navbar when a menu link is clicked
+        const menuLinks = navbar.querySelectorAll('a');
+        menuLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
         });
     }
 }
